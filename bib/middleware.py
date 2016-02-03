@@ -20,7 +20,7 @@ class DumpRequestToLogMiddleware(object):
             request.method,
             request.META['REMOTE_ADDR'],
             request.path,
-            body.decode('utf-8'))
+            body)
         )
         return None
 
