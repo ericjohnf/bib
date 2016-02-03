@@ -28,7 +28,7 @@ class DumpRequestToLogMiddleware(object):
         if request.path.startswith('/%s/' % settings.API_VERSION):
             body = 'MULTIPART/FORMDATA'
             if 'CONTENT_TYPE' in request.META and request.META['CONTENT_TYPE'][:19] != 'multipart/form-data':
-                body = (request.body).decode('utf-8')
+                body = (request.body)
             if hasattr(response, 'content'):
                 data = response.content
             if hasattr(response, 'data'):

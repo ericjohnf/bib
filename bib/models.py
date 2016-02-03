@@ -11,3 +11,6 @@ class Bib(models.Model):
 
     def __unicode__(self):
         return "[%s] Request is a %s from %s || PATH: %s || RESPONSE STATUS CODE: %s" % (self.sent_at, self.request_type, self.request_origin, self.request_path, self.response_code)
+
+    def __str__(self):
+        return "{0} Request is a {1} from {2} || PATH: {3} || RESPONSE STATUS CODE: {4}".format(self.sent_at, self.request_type, self.request_origin, self.request_path, self.response_code)
