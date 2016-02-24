@@ -25,7 +25,7 @@ class DumpRequestToLogMiddleware(object):
         return None
 
     def process_response(self, request, response):
-        if request.path.startswith('/%s/' % settings.API_VERSION):
+        if request.path.startswith('/%s/' % settings.API_VERSION) or request.path.startswith('/oauth/'):
             body = 'MULTIPART/FORMDATA'
             if 'CONTENT_TYPE' in request.META and request.META['CONTENT_TYPE'][:19] != 'multipart/form-data':
                 body = (request.body)
